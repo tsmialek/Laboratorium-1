@@ -1,0 +1,46 @@
+﻿@model PC
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+    <div class="container-md card d-flex flex-column justify-content-center mb-5 mt-5">
+      <!-- Form -->
+      <h1 class="display-5 text-center mb-5 mt-5">Wprowadź podzespoły swojego komputera:</h1>
+      <div class="row g-2 mb-4">
+        <div class="form-floating col-md">
+          <input type="text" name="" id="nazwaZestawu" class="form-control"/>
+          <label for="nazwaZestawu">Nazwa zestawu</label>
+        </div>
+
+        <div class="form-floating col-md">
+          <input type="text" name="" id="producent" class="form-control"/>
+          <label for="modelGPU">Producent</label>
+        </div>
+      </div>
+
+      <div class="form-floating mb-4">
+        <input type="text" name="" id="" class="form-control"/>
+        <label for="">Model procesora</label>
+      </div>
+
+      <div class="form-floating mb-4">
+        <input type="text" name="" id="" class="form-control"/>
+        <label for="">Pamięć RAM</label>
+      </div>
+
+      <div class="form-floating mb-4">
+        <input type="text" name="" id="" class="form-control"/>
+        <label for="">Model karty graficznej</label>
+      </div>
+
+      <div class="row g-2 mb-5">
+        <div class="form-floating col-11">
+          <input type="text" name="" id="" class="form-control"/>
+          <label for="">Model dysku</label>
+        </div>
+        <button type="button" class="btn btn-primary col-1" id="addFieldButton">
+          <i class="fa fa-plus"></i>
+        </button>
+      </div>
+    </div>

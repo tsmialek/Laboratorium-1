@@ -13,6 +13,7 @@ namespace Laboratorium_3___App_ns.Models
         public string Name { get; set; }
 
         [EmailAddress]
+        [Required(ErrorMessage = "Proszę podać poprawny Email")]
         public string Email { get; set; }
 
         [Phone]
