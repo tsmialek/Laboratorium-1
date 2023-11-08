@@ -6,7 +6,7 @@ namespace Laboratorium_3___App_ns.Models
     public class PC
     {
         [HiddenInput]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "Musisz podać nazwę")]
         public string Name { get; set; }
@@ -18,12 +18,12 @@ namespace Laboratorium_3___App_ns.Models
         public string RAM { get; set; }
 
         [Required(ErrorMessage = "Należy wybrać ilosć dostępnej pamięci")]
-        public List<string> Disk { get; set; } = new List<string>();
+        public string Disk { get; set; } 
 
         [Required(ErrorMessage = "Należy wybrać model karty graficznej")]
         public string GPU { get; set; }
 
-        public string Manufacturer { get; set; }
+        public string? Manufacturer { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime ProductionDate { get; set; }

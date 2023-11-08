@@ -4,43 +4,53 @@
 *@
 @{
 }
-    <div class="container-md card d-flex flex-column justify-content-center mb-5 mt-5">
+  <form asp-action="Create" asp-controller="PCCreator" method="post">
+    <div class="container-md card d-flex flex-column justify-content-center mb-5 mt-5 px-5">
       <!-- Form -->
       <h1 class="display-5 text-center mb-5 mt-5">Wprowadź podzespoły swojego komputera:</h1>
       <div class="row g-2 mb-4">
         <div class="form-floating col-md">
-          <input type="text" name="" id="nazwaZestawu" class="form-control"/>
+          <input type="text" asp-for="Name" id="nazwaZestawu" class="form-control @ViewData["NameClass"]?.ToString()" placeholder="Nazwa zestawu" />
           <label for="nazwaZestawu">Nazwa zestawu</label>
+          <span asp-validation-for="Name" class="small text-danger"></span>
         </div>
 
         <div class="form-floating col-md">
-          <input type="text" name="" id="producent" class="form-control"/>
+          <input type="text" asp-for="Manufacturer" id="producent" class="form-control @ViewData["ManufacturerClass"]?.ToString()" placeholder="Producent" />
           <label for="modelGPU">Producent</label>
+          <span asp-validation-for="Manufacturer" class="small text-danger"></span>
         </div>
       </div>
 
       <div class="form-floating mb-4">
-        <input type="text" name="" id="" class="form-control"/>
+        <input type="text" asp-for="Processor" id="" class="form-control @ViewData["ProcessorClass"]?.ToString()" placeholder="Model procesora" />
         <label for="">Model procesora</label>
+        <span asp-validation-for="Processor" class="small text-danger"></span>
       </div>
 
       <div class="form-floating mb-4">
-        <input type="text" name="" id="" class="form-control"/>
+        <input type="text" asp-for="RAM" id="" class="form-control @ViewData["RAMClass"]?.ToString()" placeholder="Pamięć RAM" />
         <label for="">Pamięć RAM</label>
+        <span asp-validation-for="RAM" class="small text-danger"></span>
       </div>
 
       <div class="form-floating mb-4">
-        <input type="text" name="" id="" class="form-control"/>
+        <input type="text" asp-for="GPU" id="" class="form-control @ViewData["GPUClass"]?.ToString()" placeholder="Model karty graficznej" />
         <label for="">Model karty graficznej</label>
+        <span asp-validation-for="GPU" class="small text-danger"></span>
       </div>
 
       <div class="row g-2 mb-5">
         <div class="form-floating col-11">
-          <input type="text" name="" id="" class="form-control"/>
+          <input type="text" asp-for="Disk" id="" class="form-control @ViewData["DiskClass"]?.ToString()" placeholder="Model dysku" />
           <label for="">Model dysku</label>
+          <span asp-validation-for="Disk" class="small text-danger"></span>
         </div>
         <button type="button" class="btn btn-primary col-1" id="addFieldButton">
           <i class="fa fa-plus"></i>
         </button>
       </div>
+
+      <button type="submit" class="btn btn-primary col-3 mb-4">Zapisz</button>
     </div>
+</form>
