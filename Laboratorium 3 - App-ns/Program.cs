@@ -11,6 +11,7 @@ namespace Laboratorium_3___App_ns
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddSingleton<IContactService, MemoryContactService>();
+            builder.Services.AddSingleton<IPCCreatorService, MemoryPCCreatorService>();
 
             var app = builder.Build();
 
