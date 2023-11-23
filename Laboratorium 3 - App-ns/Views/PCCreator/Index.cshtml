@@ -19,7 +19,8 @@
             <thead class="table-primary">
                 <tr>
                     <th scope="col" class="col-2">#</th>
-                    <th scope="col" class="col-6">Nazwa</th>
+                    <th scope="col" class="col-3">Nazwa</th>
+                    <th scope="col" class="col-3">Utworzono</th>
                     <th scope="col" class="col-4 text-center">Akcja</th>
                 </tr>
             </thead>
@@ -37,6 +38,9 @@
                     </td>
                     <td>
                         @item.Name
+                    </td>
+                    <td>
+                        @item.Created
                     </td>
                     <td class="text-center">
                         <a class="btn btn-secondary"

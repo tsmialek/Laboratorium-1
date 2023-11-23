@@ -8,6 +8,9 @@ namespace Laboratorium_3___App_ns.Models
         [HiddenInput]
         public int Id { get; set; }
 
+        [HiddenInput]
+        public DateTime Created {  get; set; }
+
         [Display(Name = "Nazwa")]
         [Required(ErrorMessage = "Musisz podać nazwę")]
         public string Name { get; set; }

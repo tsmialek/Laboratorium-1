@@ -4,14 +4,19 @@
     {
         private Dictionary<int, PC> _pcs;
 
+        private IDateTimeProvider _timeProvider;
+
         public MemoryPCCreatorService()
         {
             _pcs = new Dictionary<int, PC>();
+            _timeProvider = new CurrentDateTimeProvider();
         }
 
         public int Add(PC pc)
         {
             pc.Id = _pcs.Count + 1;
+            pc.Created = _timeProvider.GetCurrentDateTime();
+
             _pcs.Add(pc.Id, pc);
 
             return pc.Id;
