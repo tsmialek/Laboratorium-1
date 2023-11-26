@@ -1,4 +1,4 @@
-﻿namespace Laboratorium_3___App_ns.Models
+﻿namespace Laboratorium_3___App_ns.Models.ContactModel
 {
     public class MemoryContactService : IContactService
     {

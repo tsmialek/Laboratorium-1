@@ -1,4 +1,4 @@
-﻿namespace Laboratorium_3___App_ns.Models
+﻿namespace Laboratorium_3___App_ns.Models.PCCreator
 {
     public interface IPCCreatorService
     {
@@ -6,6 +6,6 @@
         bool Delete(int id);
         void Update(PC pc);
         List<PC> GetAll();
-        PC? FindById(int id);   
+        PC? FindById(int id);
     }
 }

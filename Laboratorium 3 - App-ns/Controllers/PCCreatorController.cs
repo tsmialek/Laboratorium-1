@@ -1,4 +1,4 @@
-﻿using Laboratorium_3___App_ns.Models;
+﻿using Laboratorium_3___App_ns.Models.PCCreator;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Laboratorium_3___App_ns.Controllers

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
-namespace Laboratorium_3___App_ns.Models
+namespace Laboratorium_3___App_ns.Models.PCCreator
 {
     public class PC
     {
@@ -25,7 +25,7 @@ namespace Laboratorium_3___App_ns.Models
         public string Disk { get; set; }
 
         [Display(Name = "Typ dysku")]
-        [Required(ErrorMessage = "Należy wybrać typ dysku")] 
+        [Required(ErrorMessage = "Należy wybrać typ dysku")]
         public DiskType DiskType { get; set; }
 
         [Display(Name = "Model karty graficznej")]

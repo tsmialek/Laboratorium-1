@@ -1,4 +1,5 @@
-using Laboratorium_3___App_ns.Models;
+using Laboratorium_3___App_ns.Models.ContactModel;
+using Laboratorium_3___App_ns.Models.PCCreator;
 
 namespace Laboratorium_3___App_ns
 {

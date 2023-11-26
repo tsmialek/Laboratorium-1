@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
-namespace Laboratorium_3___App_ns.Models
+namespace Laboratorium_3___App_ns.Models.ContactModel
 {
     public class Contact
     {

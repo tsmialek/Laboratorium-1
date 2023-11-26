@@ -1,4 +1,4 @@
-﻿namespace Laboratorium_3___App_ns.Models
+﻿namespace Laboratorium_3___App_ns.Models.PCCreator
 {
     public class MemoryPCCreatorService : IPCCreatorService
     {
@@ -19,7 +19,7 @@
 
         public bool Delete(int id)
         {
-            if(_pcs.ContainsKey(id))
+            if (_pcs.ContainsKey(id))
             {
                 _pcs.Remove(id);
                 return true;
@@ -30,7 +30,7 @@
 
         public PC? FindById(int id)
         {
-            return _pcs.ContainsKey(id) ? _pcs[id] : null; 
+            return _pcs.ContainsKey(id) ? _pcs[id] : null;
         }
 
         public List<PC> GetAll()
