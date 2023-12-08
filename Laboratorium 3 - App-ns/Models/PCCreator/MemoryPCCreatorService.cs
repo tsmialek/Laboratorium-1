@@ -45,7 +45,9 @@
 
         public void Update(PC pc)
         {
+            var timeCreated = _pcs[pc.Id].Created;
             _pcs[pc.Id] = pc;
+            _pcs[_pcs[pc.Id].Id].Created = timeCreated;
         }
     }
 }
