@@ -1,4 +1,5 @@
 ﻿using Laboratorium_3___App_ns.Models.ContactModel;
+using Laboratorium_3___App_ns.Models.PCCreator;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Laboratorium_3___App_ns.Controllers
@@ -39,7 +40,7 @@ namespace Laboratorium_3___App_ns.Controllers
 
         public IActionResult Details(int id)
         {
-            return View(_contactService.FindById(id));
+            return View("Details", _contactService.FindById(id));
         }
 
         [HttpGet]
@@ -58,6 +59,12 @@ namespace Laboratorium_3___App_ns.Controllers
             }
 
             return View();
+        }
+
+        public IActionResult Delete(int id)
+        {
+            _contactService.RemoveById(id);
+            return RedirectToAction("index");
         }
     }
 }

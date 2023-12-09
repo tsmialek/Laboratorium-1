@@ -34,9 +34,9 @@
                    @contact.Email
                </td>
                <td>
-                   <a class="btn btn-secondary" asp-controller="Contact" action="Update" asp-route-id=@contact.Id>Edytuj</a>
-                   <a class="btn btn-secondary" asp-controller="Contact" action="Delete" asp-route-id=@contact.Id>Usuń</a>
-                   <a class="btn btn-secondary" asp-controller="Contact" action="Details" asp-route-id=@contact.Id>Szczegóły</a>
+                   <a class="btn btn-secondary" asp-controller="Contact" asp-action="Update" asp-route-id=@contact.Id>Edytuj</a>
+                   <a class="btn btn-secondary" asp-controller="Contact" asp-action="Delete" asp-route-id=@contact.Id>Usuń</a>
+                   <a class="btn btn-secondary" asp-controller="Contact" asp-action="Details" asp-route-id=@contact.Id>Szczegóły</a>
                </td>
            </tr> 
         }

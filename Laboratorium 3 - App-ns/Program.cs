@@ -1,3 +1,4 @@
+using Data;
 using Laboratorium_3___App_ns.Models.ContactModel;
 using Laboratorium_3___App_ns.Models.PCCreator;
 
@@ -11,8 +12,9 @@ namespace Laboratorium_3___App_ns
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddSingleton<IContactService, MemoryContactService>();
             builder.Services.AddSingleton<IPCCreatorService, MemoryPCCreatorService>();
+            builder.Services.AddDbContext<AppDbContext>();
+            builder.Services.AddTransient<IContactService, EFContactService>();  
 
             var app = builder.Build();
 

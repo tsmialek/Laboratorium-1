@@ -10,10 +10,11 @@
 
         private int id = 3;
 
-        public void Add(Contact contact)
+        public int Add(Contact contact)
         {
             contact.Id = id++;
             _items[contact.Id] = contact;
+            return contact.Id;
         }
 
         public List<Contact> FindAll()
@@ -23,7 +24,7 @@
 
         public Contact? FindById(int id)
         {
-            return _items[id];
+            return _items.ContainsKey(id) ? _items[id] : null;
         }
 
         public void RemoveById(int id)
