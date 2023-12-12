@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Data.Entities
 {
     [Table("DiskTypes")]
-    public class DiskType
+    public class DiskTypeEntity
     {
         [Key]
         [Required]

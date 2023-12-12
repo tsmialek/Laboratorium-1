@@ -12,7 +12,7 @@ namespace Data
     {
         public DbSet<ContactEntity> Contacts { get; set; }
         public DbSet<PCEntity> PCs { get; set; }
-        public DbSet<DiskType> DiskTypes { get; set; }
+        public DbSet<DiskTypeEntity> DiskTypes { get; set; }
 
         private string DbPath { get; set; }
         public AppDbContext()
@@ -36,11 +36,12 @@ namespace Data
                 .WithMany()
                 .HasForeignKey(p => p.DiskTypeId);
 
-            modelBuilder.Entity<DiskType>()
+            modelBuilder.Entity<DiskTypeEntity>()
                 .HasData(
-                   new DiskType() { Type = "HDD" },
-                   new DiskType() { Type = "SSD" },
-                   new DiskType() { Type = "NVMe" }
+                   new DiskTypeEntity() { Type = "SSD" },
+                   new DiskTypeEntity() { Type = "HDD" },
+                   new DiskTypeEntity() { Type = "Hybrydowy"},
+                   new DiskTypeEntity() { Type = "NVMe" }
                    );
         }
     }

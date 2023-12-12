@@ -12,9 +12,10 @@ namespace Laboratorium_3___App_ns
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddSingleton<IPCCreatorService, MemoryPCCreatorService>();
+            //builder.Services.AddSingleton<IPCCreatorService, MemoryPCCreatorService>();
             builder.Services.AddDbContext<AppDbContext>();
             builder.Services.AddTransient<IContactService, EFContactService>();  
+            builder.Services.AddTransient<IPCCreatorService, EFPCCReatorService>();  
 
             var app = builder.Build();
 

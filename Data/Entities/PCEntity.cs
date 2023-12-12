@@ -25,7 +25,7 @@ namespace Data.Entities
 
         [Required]
         [ForeignKey("DiskTypeId")]
-        public DiskType DiskTypeNav { get; set; }
+        public DiskTypeEntity DiskTypeNav { get; set; }
 
         public string GPU { get; set; }
 
