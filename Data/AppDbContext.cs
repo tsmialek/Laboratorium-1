@@ -11,6 +11,9 @@ namespace Data
     public class AppDbContext : DbContext
     {
         public DbSet<ContactEntity> Contacts { get; set; }
+        public DbSet<PCEntity> PCs { get; set; }
+        public DbSet<DiskType> DiskTypes { get; set; }
+
         private string DbPath { get; set; }
         public AppDbContext()
         {
@@ -27,6 +30,18 @@ namespace Data
                 new ContactEntity() { Id = 1, Name = "Adam", Email = "adam@wsei.edu.pl", Phone = "127813268163", Birth = new DateTime(2000, 10, 10) },
                 new ContactEntity() { Id = 2, Name = "Ewa", Email = "ewa@wsei.edu.pl", Phone = "293443823478", Birth = new DateTime(1999, 8, 10) }
             );
+
+            modelBuilder.Entity<PCEntity>()
+                .HasOne(p => p.DiskTypeNav)
+                .WithMany()
+                .HasForeignKey(p => p.DiskTypeId);
+
+            modelBuilder.Entity<DiskType>()
+                .HasData(
+                   new DiskType() { Type = "HDD" },
+                   new DiskType() { Type = "SSD" },
+                   new DiskType() { Type = "NVMe" }
+                   );
         }
     }
 }
