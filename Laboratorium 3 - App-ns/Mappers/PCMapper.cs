@@ -13,7 +13,7 @@ namespace Laboratorium_3___App_ns.Mappers
             Processor = pcEntity.Processor,
             RAM = pcEntity.RAM,
             Disk = pcEntity.Disk,
-            DiskType = DiskTypeMapper.ToEnum(pcEntity.DiskTypeNav),
+            DiskType = (DiskType)Enum.Parse(typeof(DiskType), pcEntity.DiskType),
             GPU = pcEntity.GPU,
             Manufacturer = pcEntity.Manufacturer,
             ProductionDate = pcEntity.ProductionDate
@@ -29,8 +29,7 @@ namespace Laboratorium_3___App_ns.Mappers
                 Processor = model.Processor,
                 RAM = model.RAM,
                 Disk = model.Disk,
-                DiskTypeId = model.DiskType.ToString(),
-                DiskTypeNav = DiskTypeMapper.ToEntity(model.DiskType),
+                DiskType = model.DiskType.ToString(),
                 GPU = model.GPU,
                 Manufacturer = model.Manufacturer,
                 ProductionDate = model.ProductionDate

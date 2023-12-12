@@ -12,7 +12,6 @@ namespace Data
     {
         public DbSet<ContactEntity> Contacts { get; set; }
         public DbSet<PCEntity> PCs { get; set; }
-        public DbSet<DiskTypeEntity> DiskTypes { get; set; }
 
         private string DbPath { get; set; }
         public AppDbContext()
@@ -31,18 +30,6 @@ namespace Data
                 new ContactEntity() { Id = 2, Name = "Ewa", Email = "ewa@wsei.edu.pl", Phone = "293443823478", Birth = new DateTime(1999, 8, 10) }
             );
 
-            modelBuilder.Entity<PCEntity>()
-                .HasOne(p => p.DiskTypeNav)
-                .WithMany()
-                .HasForeignKey(p => p.DiskTypeId);
-
-            modelBuilder.Entity<DiskTypeEntity>()
-                .HasData(
-                   new DiskTypeEntity() { Type = "SSD" },
-                   new DiskTypeEntity() { Type = "HDD" },
-                   new DiskTypeEntity() { Type = "Hybrydowy"},
-                   new DiskTypeEntity() { Type = "NVMe" }
-                   );
         }
     }
 }

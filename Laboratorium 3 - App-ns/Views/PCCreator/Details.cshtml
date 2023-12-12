@@ -23,14 +23,25 @@
         <tbody>
             @foreach(var property in ViewData.ModelMetadata.Properties)
             {
-                if (property.Name != "Id")
-                    {
+                if (property.Name != "Id" && property.Name != "Created")
+                {
                     var propertyValue = property.PropertyGetter(Model) == null ? "---" : property.PropertyGetter(Model);
                     <tr>
-                            <td>@property.DisplayName</td>
+                        <td>@property.DisplayName</td>
                             <td>@propertyValue</td>
-                        </tr>
-                    }
+                    </tr>
+                }  
+                if (property.Name == "Created")
+                {
+                    var createdDate = property.PropertyGetter(Model);
+                    string formattedDate = createdDate == null ? "---" : ((DateTime)createdDate).ToString("yyyy-MM-dd");
+
+                    <tr>
+                            <td>Dodano: </td>
+                            <td>@formattedDate</td>
+                    </tr>
+                }
+ 
             }
         </tbody>
     </table>

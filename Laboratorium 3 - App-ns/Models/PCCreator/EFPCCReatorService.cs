@@ -18,7 +18,7 @@ namespace Laboratorium_3___App_ns.Models.PCCreator
         public int Add(PC pc)
         {
             var e = _context.PCs.Add(PCMapper.ToEntity(pc));
-            e.Entity.Created = _timeProvider.GetCurrentDateTime();
+            e.Entity.Created = _timeProvider.GetCurrentDateTime().Date;
             _context.SaveChanges();
             return e.Entity.Id;
         }
@@ -49,9 +49,26 @@ namespace Laboratorium_3___App_ns.Models.PCCreator
 
         public void Update(PC pc)
         {
-            _context.Update(PCMapper.ToEntity(pc));
-            _context.PCs.Find(pc.Id).Created = pc.Created;
-            _context.SaveChanges();
+            var entityToUpdate = _context.PCs.Find(pc.Id);
+            if (entityToUpdate != null)
+            {
+                // Teraz aktualizujemy właściwości istniejącego obiektu
+                entityToUpdate.Name = pc.Name;
+                entityToUpdate.Processor = pc.Processor;
+                entityToUpdate.RAM = pc.RAM;
+                entityToUpdate.Disk = pc.Disk;
+                entityToUpdate.DiskType = pc.DiskType.ToString();
+                entityToUpdate.GPU = pc.GPU;
+                entityToUpdate.Manufacturer = pc.Manufacturer;
+                entityToUpdate.ProductionDate = pc.ProductionDate;
+
+                _context.Update(entityToUpdate); // Może być opcjonalne w zależności od konfiguracji EF
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new NullReferenceException();
+            }
         }
     }
 }
